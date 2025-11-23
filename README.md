@@ -1,5 +1,6 @@
 # Carpet-Igny-Addition
 
+**中文** | [English](README_en.md)
 
 ## 前置模组
 
