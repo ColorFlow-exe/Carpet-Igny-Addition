@@ -165,7 +165,7 @@ Fake players will not correct yaw when riding boats. [#2100](https://github.com/
 ### KillFakePlayerRemoveVehicle
 
 When removing a fake player, remove the vehicle they are riding in.
-cantrade: Remove the vehicle when there are no villagers or wandering merchants on it, and keep other options consistent with the true option.
+cantrade: Remove the vehicle when there are no villagers or wandering merchants on it, and keep other options consistent with the false option.
 
 - Type: `boolean`
 - Default Value: `true`

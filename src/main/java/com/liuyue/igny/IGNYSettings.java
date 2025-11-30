@@ -108,4 +108,22 @@ public class IGNYSettings
             options = {"false", "cantrade", "true"}
     )
     public static String KillFakePlayerRemoveVehicle = "true";
+
+    @Rule(
+            categories = {IGNY,FEATURE},
+            options = {"false", "true"}
+    )
+    public static Boolean CandlePlaceOnIncompleteBlock = false;
+
+    @Rule(
+            categories = {IGNY, COMMAND, CREATIVE, FEATURE},
+            options = {"false", "true", "ops", "0", "1", "2", "3", "4"}
+    )
+    public static String CommandFixnotepitch = "ops";
+
+    @Rule(
+            categories = {IGNY, COMMAND, CREATIVE, FEATURE},
+            options = {"false", "true"}
+    )
+    public static Boolean FixnotepitchUpdateBlock = false;
 }

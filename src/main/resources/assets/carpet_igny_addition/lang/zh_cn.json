@@ -6,6 +6,7 @@
   "igny.settings.command.total_rules": "总规则数",
   "igny.command.enderchest.no_permission": "你没有权限丢弃末影箱物品",
   "igny.command.enderchest.real_player_op_only": "只有OP可以丢弃真实玩家的末影箱物品",
+  "igny.command.fixnotepitch.success": "成功将 %s 个音符盒的音高修改为0",
 
   "carpet.rule.WardenNeverDig.name": "监守者永不钻地",
   "carpet.rule.WardenNeverDig.desc": "让监守者永远不会钻地",
@@ -46,5 +47,9 @@
   "carpet.rule.FakePlayerBoatYawFix.desc": "假人在骑乘船时不会纠正偏航角",
   "carpet.rule.KillFakePlayerRemoveVehicle.name": "移除假玩家时移除载具",
   "carpet.rule.KillFakePlayerRemoveVehicle.desc": "移除假玩家时移除其乘坐的载具",
-  "carpet.rule.KillFakePlayerRemoveVehicle.extra.0": "cantrade：当载具上没有村民或者流浪商人时移除载具，其他与true选项保持一致"
+  "carpet.rule.KillFakePlayerRemoveVehicle.extra.0": "cantrade：当载具上没有村民或者流浪商人时移除载具，其他与false选项保持一致",
+  "carpet.rule.CommandFixnotepitch.name": "音符盒音高归零指令权限",
+  "carpet.rule.CommandFixnotepitch.desc": "将范围内的音符盒的音高调整为零",
+  "carpet.rule.CommandFixnotepitech.extra.0": "是否产生方块更新由FixnotepitchUpdateBlock规则控制",
+  "carpet.rule.FixnotepitchUpdateBlock.desc":"控制CommandFixnotepitech是否产生方块更新"
 }

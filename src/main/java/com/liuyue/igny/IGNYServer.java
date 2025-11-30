@@ -6,10 +6,14 @@ import carpet.CarpetServer;
 
 import carpet.api.settings.SettingsManager;
 
+import com.liuyue.igny.commands.FixnotepitchCommmand;
 import com.liuyue.igny.tracker.RuleChangeTracker;
 import com.liuyue.igny.utils.ComponentTranslate;
 import com.liuyue.igny.utils.CountRulesUtil;
 
+import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.commands.CommandBuildContext;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.MinecraftServer;
 
 import org.apache.logging.log4j.LogManager;
@@ -45,6 +49,13 @@ public class IGNYServer implements CarpetExtension {
         settingsManager = new SettingsManager(IGNYServer.getInstance().version(), MOD_ID, "IGNY");
         CarpetServer.settingsManager.parseSettingsClass(IGNYSettings.class);
 
+    }
+
+    @Override
+    public void registerCommands(
+            CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext commandBuildContext
+    ) {
+        FixnotepitchCommmand.register(dispatcher);
     }
 
     @Override
