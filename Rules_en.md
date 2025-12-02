@@ -209,7 +209,7 @@ Wither, Wither Skeleton, and Wither Rose cannot grant players the Wither effect.
 
 ### SetDefaultArgument
 
-In `/carpet <rule> <value> <setDefault>`, the command permission for the `<setDefault>` argument is controlled, allowing the rule to be directly set as the default.
+In command`/carpet <rule> <value> <setDefault>`, the command permission for the `<setDefault>` argument is controlled, allowing the rule to be directly set as the default.
 
 - Type: `boolean`
 - Default Value: `false`
