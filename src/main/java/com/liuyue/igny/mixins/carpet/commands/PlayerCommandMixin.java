@@ -26,7 +26,15 @@ import static net.minecraft.commands.Commands.argument;
 import static net.minecraft.commands.Commands.literal;
 
 @Mixin(PlayerCommand.class)
-public abstract class PlayerCommandPermissionsMixin {
+public abstract class PlayerCommandMixin {
+
+
+    @Shadow
+    private static ServerPlayer getPlayer(CommandContext<CommandSourceStack> context) {
+        String playerName = StringArgumentType.getString(context, "player");
+        MinecraftServer server = context.getSource().getServer();
+        return server.getPlayerList().getPlayerByName(playerName);
+    }
 
     @Shadow
     private static Command<CommandSourceStack> manipulation(Consumer<EntityPlayerActionPack> action) {
@@ -38,14 +46,7 @@ public abstract class PlayerCommandPermissionsMixin {
         return 0;
     }
 
-    @Shadow
-    private static ServerPlayer getPlayer(CommandContext<CommandSourceStack> context) {
-        String playerName = StringArgumentType.getString(context, "player");
-        MinecraftServer server = context.getSource().getServer();
-        return server.getPlayerList().getPlayerByName(playerName);
-    }
-
-    @Inject(method = "makeDropCommand", at = @At("HEAD"), cancellable = true, remap = false)
+    @Inject(method = "makeDropCommand", at = @At("HEAD"), cancellable = true,remap = false)
     private static void onMakeDropCommand(String actionName, boolean dropAll, CallbackInfoReturnable<LiteralArgumentBuilder<CommandSourceStack>> cir) {
         LiteralArgumentBuilder<CommandSourceStack> command = literal(actionName);
 
@@ -63,12 +64,13 @@ public abstract class PlayerCommandPermissionsMixin {
             }
 
             return manipulation(ap -> ap.drop(slot, dropAll)).run(context);
+
         }));
 
         command.then(literal("inventory").executes(manipulation(ap -> ap.drop(-3, dropAll))));
 
         command.then(literal("enderchest")
-                .requires(source -> PlayerCommandPermissions.canDropEnderChest(source))
+                .requires(PlayerCommandPermissions::canDropEnderChest)
                 .executes(context -> {
                     ServerPlayer targetPlayer = getPlayer(context);
                     if (targetPlayer == null) return 0;
@@ -85,6 +87,7 @@ public abstract class PlayerCommandPermissionsMixin {
                     }
 
                     return manipulation(ap -> ap.drop(-4, dropAll)).run(context);
+
                 }));
 
         command.then(literal("mainhand").executes(manipulation(ap -> ap.drop(-1, dropAll))))

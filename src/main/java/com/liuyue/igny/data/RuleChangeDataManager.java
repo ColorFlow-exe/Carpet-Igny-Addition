@@ -67,7 +67,6 @@ public class RuleChangeDataManager {
         }
 
         try {
-            // 如果文件不存在，创建空的 JSON 文件
             if (!Files.exists(dataFilePath)) {
                 Files.createDirectories(dataFilePath.getParent());
                 Files.writeString(dataFilePath, "{}");
@@ -75,10 +74,8 @@ public class RuleChangeDataManager {
                 return;
             }
 
-            // 读取现有文件
             String json = Files.readString(dataFilePath);
 
-            // 如果文件为空，初始化为空 Map
             if (json == null || json.trim().isEmpty()) {
                 changeHistory.clear();
                 return;
@@ -137,7 +134,6 @@ public class RuleChangeDataManager {
                     .format(new java.util.Date(timestamp));
         }
 
-        // 检查记录是否有效（没有 null 值）
         public boolean isValid() {
             return ruleName != null && !ruleName.isEmpty() &&
                     rawValue != null &&
@@ -146,7 +142,6 @@ public class RuleChangeDataManager {
                     formattedTime != null && !formattedTime.isEmpty();
         }
 
-        // GSON 需要无参构造函数用于反序列化
         @SuppressWarnings("unused")
         private RuleChangeRecord() {
             this.ruleName = "";

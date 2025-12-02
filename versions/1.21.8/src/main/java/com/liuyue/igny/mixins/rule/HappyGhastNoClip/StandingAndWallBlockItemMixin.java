@@ -23,7 +23,7 @@ public class StandingAndWallBlockItemMixin
             value = "INVOKE",
             target = "Lnet/minecraft/world/level/LevelReader;isUnobstructed(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Z"
     ))
-    private boolean canCreativePlayerPlace(
+    private boolean canPlayerPlace(
             LevelReader instance, BlockState blockState, BlockPos blockPos, CollisionContext collisionContext, Operation<Boolean> original,@Local(argsOnly = true) BlockPlaceContext blockPlaceContext
     )
     {

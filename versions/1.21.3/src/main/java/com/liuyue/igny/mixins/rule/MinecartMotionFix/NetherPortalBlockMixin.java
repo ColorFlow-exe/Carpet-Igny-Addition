@@ -19,8 +19,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.Set;
-
 @Mixin(NetherPortalBlock.class)
 public class NetherPortalBlockMixin {
 
@@ -29,11 +27,10 @@ public class NetherPortalBlockMixin {
         if (IGNYSettings.MinecartMotionFix) {
             BlockPos blockPos = foundRectangle.minCorner;
             BlockState blockState = serverLevel.getBlockState(blockPos);
-            Direction.Axis axis2 = (Direction.Axis) blockState.getOptionalValue(BlockStateProperties.HORIZONTAL_AXIS).orElse(Direction.Axis.X);
-            double d = (double) foundRectangle.axis1Size;
-            double e = (double) foundRectangle.axis2Size;
+            Direction.Axis axis2 = blockState.getOptionalValue(BlockStateProperties.HORIZONTAL_AXIS).orElse(Direction.Axis.X);
+            double d = foundRectangle.axis1Size;
+            double e = foundRectangle.axis2Size;
             EntityDimensions entityDimensions = entity.getDimensions(entity.getPose());
-            int i = axis == axis2 ? 0 : 90;
             Vec3 vec3d3 = axis == axis2 ? entity.getDeltaMovement() : new Vec3(entity.getDeltaMovement().z, entity.getDeltaMovement().y,
                     -entity.getDeltaMovement().x);
             double f = (double) entityDimensions.width() / 2.0 + (d - (double) entityDimensions.width()) * vec3.x();
@@ -42,8 +39,11 @@ public class NetherPortalBlockMixin {
             boolean bl = axis2 == Direction.Axis.X;
             Vec3 vec3d = new Vec3((double) blockPos.getX() + (bl ? f : h), (double) blockPos.getY() + g, (double) blockPos.getZ() + (bl ? h : f));
             Vec3 vec3d2 = PortalShape.findCollisionFreePosition(vec3d, serverLevel, entity, entityDimensions);
-            cir.setReturnValue(new TeleportTransition(serverLevel, vec3d2, vec3d3, 0, 0.0F,
-                    Relative.union(new Set[]{Relative.DELTA, Relative.ROTATION}), postTeleportTransition));
+            cir.setReturnValue(new TeleportTransition(
+                    serverLevel, vec3d2, vec3d3, 0, 0.0F,
+                    Relative.union(Relative.DELTA, Relative.ROTATION),
+                    postTeleportTransition
+            ));
         }
     }
 }

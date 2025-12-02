@@ -1,6 +1,5 @@
 package com.liuyue.igny.mixins.rule.HappyGhastNoClip;
 
-import carpet.CarpetSettings;
 import com.liuyue.igny.IGNYSettings;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
@@ -11,7 +10,6 @@ import net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.world.level.material.PushReaction;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(ShulkerBoxBlockEntity.class)
 public class ShulkerBoxBlockEntityMixin {
@@ -21,7 +19,7 @@ public class ShulkerBoxBlockEntityMixin {
     ))
     private PushReaction getPistonBehaviourOfNoClipPlayers(Entity instance, Operation<PushReaction> original)
     {
-        if (instance instanceof Player && instance.getRootVehicle() instanceof HappyGhast&& IGNYSettings.HappyGhastNoClip)
+        if (((instance instanceof Player && instance.getRootVehicle() instanceof HappyGhast)||(instance instanceof HappyGhast&&instance.isVehicle()))&&IGNYSettings.HappyGhastNoClip)
             return PushReaction.IGNORE;
         return original.call(instance);
     }

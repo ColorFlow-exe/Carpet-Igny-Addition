@@ -1,6 +1,5 @@
 package com.liuyue.igny.mixins.rule.TntMinecartEmptyDamageSourceFix;
 
-import com.liuyue.igny.utils.EmtpyTarget;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;

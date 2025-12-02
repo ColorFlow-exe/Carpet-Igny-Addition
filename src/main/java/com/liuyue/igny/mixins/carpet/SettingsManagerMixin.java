@@ -1,6 +1,5 @@
 package com.liuyue.igny.mixins.carpet;
 
-import carpet.CarpetServer;
 import carpet.api.settings.CarpetRule;
 import carpet.api.settings.SettingsManager;
 import carpet.utils.Messenger;
@@ -67,11 +66,11 @@ public class SettingsManagerMixin {
                 RuleChangeDataManager.RuleChangeRecord record = lastChange.get();
 
                 if (record.isValid()) {
-                    carpet.utils.Messenger.m(source, new Object[]{
+                    carpet.utils.Messenger.m(source,
                             "g  "+Translations.tr(RECORD_OPERATOR,"Operator")+": ", "w " + record.sourceName,
                             "g  "+Translations.tr(CHANGE_TIME,"ChangeTime")+": ", "w " + record.formattedTime,
                             "g  "+Translations.tr(RAW_VALUE,"RawValue")+": ", "w " + objectToString(record.rawValue)
-                    });
+                    );
                 }
             }
         }
@@ -112,7 +111,6 @@ public class SettingsManagerMixin {
             remap = false
     )
     private void printVersion(CommandSourceStack source, CallbackInfoReturnable<Integer> cir) {
-        if ((Object)this == CarpetServer.settingsManager) {
             Messenger.m(
                     source,
                     Messenger.c(
@@ -122,7 +120,7 @@ public class SettingsManagerMixin {
                             String.format("g (%s: %d)", Translations.tr(TOTAL_RULES_TRANSLATION_KEY, "total rules"), IGNYServer.ruleCount)
                     )
             );
-        }
+
     }
 
 }

@@ -8,13 +8,14 @@ import net.minecraft.world.phys.AABB;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin{
 
-   @Inject(method = "getBoundingBox", at = @At("HEAD"), cancellable = true)
-    private void musicSoulNoClipBoundingBox(CallbackInfoReturnable<AABB> cir) {
+    @Inject(method = "getBoundingBox", at = @At("HEAD"), cancellable = true)
+    private void HappyGhastNoBoundingBox(CallbackInfoReturnable<AABB> cir) {
        Entity self = (Entity)(Object)this;
        if(self instanceof HappyGhast&&self.isVehicle()&&IGNYSettings.HappyGhastNoClip){
            cir.setReturnValue(new AABB(0, 0, 0, 0, 0, 0));
@@ -22,8 +23,16 @@ public abstract class EntityMixin{
 
    }
 
-    @Inject(method = "isInWall", at = @At("HEAD"), cancellable = true)
-    private void onIsInWall(CallbackInfoReturnable<Boolean> cir) {
+   @Inject(method = "tick", at = @At("HEAD"))
+   private void setNoPhysics(CallbackInfo ci) {
+       Entity self = (Entity)(Object)this;
+       if(self instanceof HappyGhast&&IGNYSettings.HappyGhastNoClip){
+           self.noPhysics = self.isVehicle();
+       }
+   }
+
+   @Inject(method = "isInWall", at = @At("HEAD"), cancellable = true)
+   private void onIsInWall(CallbackInfoReturnable<Boolean> cir) {
         Entity self = (Entity)(Object)this;
         if (self instanceof HappyGhast && self.isVehicle()&&IGNYSettings.HappyGhastNoClip||(self instanceof Player && self.getRootVehicle() instanceof HappyGhast&&IGNYSettings.HappyGhastNoClip)) {
             cir.setReturnValue(false);
@@ -33,7 +42,6 @@ public abstract class EntityMixin{
                 cir.setReturnValue(false);
             }
         }
-
-    }
+   }
 
 }
