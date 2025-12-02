@@ -199,3 +199,12 @@ cantrade：当载具上没有村民或者流浪商人时移除载具，其他与
 - 默认值: `false`
 - 参考选项: `false`, `true`
 - 分类: `IGNY`, `FEATURE`
+
+### 设置默认参数权限 (SetDefaultArgument)
+
+在/carpet <rule> <value> <setDefault>中，控制<setDefault>参数的指令权限，用于让规则直接设为默认。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 参考选项: `false`, `true`, `ops`, `0`, `1`, `2`, `3`, `4`
+- 分类: `IGNY`, `COMMAND`, `FEATURE`

@@ -39,5 +39,5 @@
   "carpet.rule.HappyGhastNoClip.desc":"Happy Ghast has players who ride while ignoring block collisions",
   "carpet.rule.OnlyPlayerCreateNetherPortal.desc": "Only players can create nether portal",
   "carpet.rule.NoWitherEffect.desc": "Wither, Wither Skeleton, and Wither Rose cannot grant players the Wither effect",
-  "carpet.rule.SetDefaultArgument.desc": "1"
+  "carpet.rule.SetDefaultArgument.desc": "In `/carpet <rule> <value> <setDefault>`, the command permission for the `<setDefault>` argument is controlled, allowing the rule to be directly set as the default"
 }

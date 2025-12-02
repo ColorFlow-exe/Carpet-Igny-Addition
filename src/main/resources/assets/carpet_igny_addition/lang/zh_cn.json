@@ -60,5 +60,7 @@
   "carpet.rule.OnlyPlayerCreateNetherPortal.name": "只有玩家实体创建下界传送门",
   "carpet.rule.OnlyPlayerCreateNetherPortal.desc": "只有玩家实体可以创建下界传送门",
   "carpet.rule.NoWitherEffect.name": "没有凋零效果",
-  "carpet.rule.NoWitherEffect.desc": "凋零、凋零骷髅、凋零玫瑰不能给予玩家凋零效果"
+  "carpet.rule.NoWitherEffect.desc": "凋零、凋零骷髅、凋零玫瑰不能给予玩家凋零效果",
+  "carpet.rule.SetDefaultArgument.name": "设置默认参数权限",
+  "carpet.rule.SetDefaultArgument.desc": "在/carpet <rule> <value> <setDefault>中，控制<setDefault>参数的指令权限，用于让规则直接设为默认"
 }
