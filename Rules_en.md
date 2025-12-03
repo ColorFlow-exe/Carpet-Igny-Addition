@@ -216,7 +216,7 @@ In command`/carpet <rule> <value> <setDefault>`, the command permission for the 
 - Suggested Options: `false`, `true`, `ops`, `0`, `1`, `2`, `3`, `4`
 - Categories: `IGNY`, `COMMAND`, `FEATURE`
 
-### ZombifiedPiglinDropLootIfAngryReintroduced
+### ZombifiedPiglinDropLootIfAngryReintroduced `MC>=1.21.5`
 
 When enabled, zombified piglins that die within 100 game ticks of becoming angry or targeting a player will drop loot and xp orbs as if killed by a player
 
