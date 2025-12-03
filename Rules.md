@@ -139,7 +139,7 @@
 ### 移除假玩家时移除载具 (KillFakePlayerRemoveVehicle)
 
 移除假玩家时移除其乘坐的载具。
-cantrade：当载具上没有村民或者流浪商人时移除载具，其他与false选项保持一致。
+cantrade：当载具上没有村民或者流浪商人时移除载具，其他实体保持默认。
 
 - 类型: `boolean`
 - 默认值: `true`

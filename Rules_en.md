@@ -118,7 +118,7 @@ Reintroducing the skeleton pickup swords behavior from Minecraft versions below 
 
 ### MinecartMotionFix `MC>=1.21.2`
 
-Ports the feature from versions 1.21-1.21.1 where minecars carrying passengers transfer their momentum to passengers during the teleport tick when crossing dimensions to version 1.21.2 and above.
+Ports the feature from versions 1.21-1.21.1 where minecarts carrying passengers transfer their momentum to passengers during the teleport tick when crossing dimensions to version 1.21.2 and above.
 
 - Type: `boolean`
 - Default Value: `false`
@@ -146,7 +146,7 @@ Fake players will not correct yaw when riding boats. [#2100](https://github.com/
 ### KillFakePlayerRemoveVehicle
 
 When removing a fake player, remove the vehicle they are riding in.
-cantrade: Remove the vehicle when there are no villagers or wandering merchants on it, and keep other options consistent with the false option.
+cantrade: Remove the vehicle when there are no villagers or wandering merchants on it, and other entities remain the default.
 
 - Type: `boolean`
 - Default Value: `true`
