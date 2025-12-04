@@ -26,8 +26,10 @@ public abstract class EntityMixin{
    @Inject(method = "tick", at = @At("HEAD"))
    private void setNoPhysics(CallbackInfo ci) {
        Entity self = (Entity)(Object)this;
-       if(self instanceof HappyGhast&&IGNYSettings.HappyGhastNoClip){
-           self.noPhysics = self.isVehicle();
+       if(self instanceof HappyGhast){
+           if(IGNYSettings.HappyGhastNoClip) {
+               self.noPhysics = self.isVehicle();
+           }else self.noPhysics = false;
        }
    }
 
