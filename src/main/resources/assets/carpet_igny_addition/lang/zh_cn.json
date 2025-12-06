@@ -69,5 +69,7 @@
   "carpet.rule.locatorBarNoFakePlayer.name": "定位栏无假玩家",
   "carpet.rule.locatorBarNoFakePlayer.desc": "定位栏不显示假玩家",
   "carpet.rule.fakePlayerLoginLogoutNoChatInfo.name": "假玩家登录登出无聊天信息",
-  "carpet.rule.fakePlayerLoginLogoutNoChatInfo.desc": "假玩家登录登出不在聊天栏显示登录登出的提示"
+  "carpet.rule.fakePlayerLoginLogoutNoChatInfo.desc": "假玩家登录登出不在聊天栏显示登录登出的提示",
+  "carpet.rule.commandPlayerOperate.name": "玩家动作指令权限",
+  "carpet.rule.commandPlayerOperate.desc": "playerManager命令来控制玩家动作"
 }

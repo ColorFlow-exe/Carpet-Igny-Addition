@@ -2,8 +2,23 @@
 
 ### Fixnotepitch
 
+### Syntax
 `/fixnotepitch <pos1> <pos2> [<pitch>]`
+- The parameter `<pitch>` is optional, with a valid range of 0–24. The default value is 0.
 
-Sets the pitch of note blocks within the cuboid region defined by `<pos1>` and `<pos2>`.
+### Effect
+- Sets the note pitch of all note blocks within the cuboid region defined by `<pos1>` and `<pos2>` to `<pitch>`.
 
-The parameter `<pitch>` is optional, with a value range from 0 to 24 and a default value of 0.
+## Player Operation (`playerOperate`)
+
+### Syntax
+- `/player Operate <player>/list ..`
+    - `...vault`
+    - `...stop`
+
+### Effects
+- `/player Operate <player>/list ..`
+    - `...vault [<maxCycles>]`
+        - Causes `<player>` to hold down the right mouse button for 100 game ticks, then log off. After 21 game ticks, a dummy named `<player>_1` is summoned at the same position and orientation as `<player>`. This dummy continues holding the right mouse button for another 100 ticks before logging off, and after another 21 ticks, summons `<player>_2`. This cycle repeats until reaching `<player>_[<maxCycles>]`. The default value of `[<maxCycles>]` is 130.
+    - `...stop`
+        - Cancels all ongoing tasks for the specified player.

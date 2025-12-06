@@ -26,6 +26,8 @@
 
 [All rules](Rules_en.md)
 
+**The rules marked with "Bata" are test rules and can only be downloaded and used in Github Action builds!!**
+
 ### Commands
 
 [All commands](Commands_en.md)

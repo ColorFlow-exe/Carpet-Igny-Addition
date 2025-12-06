@@ -26,6 +26,8 @@
 
 [所有规则](Rules.md)
 
+**规则旁边带有Bata标识，即测试规则，只能在Github Action的构建里下载使用！！！**
+
 ### 命令
 
 [所有命令](Commands.md)

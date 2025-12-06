@@ -2,6 +2,9 @@ package com.liuyue.igny.mixins.rule.fakePlayerLoginLogoutNoInfo;
 
 import carpet.patches.EntityPlayerMPFake;
 import com.liuyue.igny.IGNYSettings;
+import com.liuyue.igny.task.ITask;
+import com.liuyue.igny.task.TaskManager;
+import com.liuyue.igny.task.vault.VaultTask;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.network.chat.Component;
@@ -11,6 +14,7 @@ import net.minecraft.server.players.PlayerList;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+
 
 @Mixin(value = ServerGamePacketListenerImpl.class,priority = 1500)
 public class ServerGamePacketListenerImplMixin {
@@ -22,8 +26,28 @@ public class ServerGamePacketListenerImplMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/server/players/PlayerList;broadcastSystemMessage(Lnet/minecraft/network/chat/Component;Z)V")
     )
     private void disableLogoutMessage(PlayerList instance, Component component, boolean bl, Operation<Void> original) {
-        if(this.player instanceof EntityPlayerMPFake && IGNYSettings.fakePlayerLoginLogoutNoChatInfo) {
-            return;
+        if (this.player instanceof EntityPlayerMPFake) {
+            String playerName = this.player.getName().getString();
+
+            boolean isVaultFake = false;
+
+            for (ITask task : TaskManager.getAllActiveTasks()) {
+                if (!(task instanceof VaultTask vaultTask)) continue;
+
+                if (playerName.equals(vaultTask.getLogoutPlayerName())) {
+                    isVaultFake = true;
+                    break;
+                }
+
+                ServerPlayer current = vaultTask.getCurrentFakePlayer();
+                if (current != null && current == this.player) {
+                    isVaultFake = true;
+                    break;
+                }
+            }
+            if (isVaultFake || IGNYSettings.fakePlayerLoginLogoutNoChatInfo) {
+                return;
+            }
         }
         original.call(instance, component, bl);
     }
