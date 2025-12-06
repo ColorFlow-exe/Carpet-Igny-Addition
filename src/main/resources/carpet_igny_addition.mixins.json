@@ -4,6 +4,7 @@
   "package": "com.liuyue.igny.mixins",
   "compatibilityLevel": "{{COMPATIBILITY_LEVEL}}",
   "mixins": [
+    "EntityPlayerMPFakeMixin",
     "MinecraftServerMixin",
     "carpet.SettingsManagerMixin",
     "carpet.accessors.EntityPlayerActionPackAccessor",

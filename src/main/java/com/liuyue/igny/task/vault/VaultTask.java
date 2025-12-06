@@ -2,6 +2,8 @@ package com.liuyue.igny.task.vault;
 
 import carpet.helpers.EntityPlayerActionPack;
 import carpet.patches.EntityPlayerMPFake;
+import com.liuyue.igny.IGNYServer;
+import com.liuyue.igny.IGNYSettings;
 import com.liuyue.igny.task.ITask;
 import com.liuyue.igny.task.TaskManager;
 import net.minecraft.network.chat.Component;
@@ -19,7 +21,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class VaultTask implements ITask {
 
     private static final Map<String, VaultTask> INSTANCE_CACHE = new ConcurrentHashMap<>();
-    public static final Set<String> VAULT_FAKE_NAMES = ConcurrentHashMap.newKeySet();
     private final MinecraftServer server;
     private final String playerName;
     private final int maxCycles;
@@ -35,7 +36,7 @@ public class VaultTask implements ITask {
     private boolean isRunning = false;
     private String logoutPlayerName;
     private String pendingFakeName = null;
-    private static final int SPAWN_TIMEOUT_TICKS = 200;
+    private static final int SPAWN_TIMEOUT_TICKS = 400;
 
     private enum Stage {
         SPAWNING,
@@ -211,8 +212,8 @@ public class VaultTask implements ITask {
                     if (!success) {
                         stop();
                     }
-                } finally {
-                    carpet.CarpetSettings.allowSpawningOfflinePlayers = false;
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -220,7 +221,6 @@ public class VaultTask implements ITask {
             }
         } else {
             ServerPlayer candidate = server.getPlayerList().getPlayerByName(pendingFakeName);
-            VAULT_FAKE_NAMES.add(pendingFakeName);
             if (candidate != null && candidate.isAlive()) {
                 currentFakePlayer = candidate;
                 pendingFakeName = null;
@@ -230,6 +230,7 @@ public class VaultTask implements ITask {
 
             if (stageTickCounter >= SPAWN_TIMEOUT_TICKS) {
                 stop();
+                broadcastMessage("§c[PlayerOperate] §6Vault§c: 玩家 §f" + playerName + " §c无法在 §f" + SPAWN_TIMEOUT_TICKS + " §ctick内生成假人，停止任务");
             }
         }
     }
@@ -281,7 +282,6 @@ public class VaultTask implements ITask {
                     .getName();
                     //#endif
 
-            VAULT_FAKE_NAMES.remove(logoutPlayerName);
             if (currentFakePlayer instanceof carpet.fakes.ServerPlayerInterface spi) {
                 spi.getActionPack().start(EntityPlayerActionPack.ActionType.USE, null);
             }
@@ -309,6 +309,7 @@ public class VaultTask implements ITask {
                 player.sendSystemMessage(Component.literal(message));
             }
         });
+        IGNYServer.LOGGER.info(message);
     }
 
     public String getPendingFakeName() { return pendingFakeName; }
