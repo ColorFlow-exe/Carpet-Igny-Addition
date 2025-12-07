@@ -252,6 +252,6 @@ When a fake player logs in and logs out, the prompt of login and logout will not
 Use the /playerOperate command to manage player actions.
 
 - Type: `boolean`
-- Default Value: `false`
+- Default Value: `ops`
 - Suggested Options: `false`, `true`, `ops`, `0`, `1`, `2`, `3`, `4`
 - Categories: `IGNY`, `COMMAND`, `FEATURE`
