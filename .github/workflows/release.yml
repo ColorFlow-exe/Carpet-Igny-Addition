@@ -168,7 +168,7 @@ jobs:
       - name: Publish Minecraft Mods
         uses: Kira-NT/mc-publish@v3.3
         with:
-          modrinth-id: fo0Bar
+          modrinth-id: 7PCm6yD1
           modrinth-token: ${{ secrets.MODRINTH_API_TOKEN }}
 
           # https://legacy.curseforge.com/account/api-tokens
