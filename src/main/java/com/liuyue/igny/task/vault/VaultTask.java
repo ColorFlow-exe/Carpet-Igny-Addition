@@ -7,10 +7,13 @@ import com.liuyue.igny.IGNYSettings;
 import com.liuyue.igny.task.ITask;
 import com.liuyue.igny.task.TaskManager;
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.network.DisconnectionDetails;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.ServerTickRateManager;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.TimeUtil;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -38,6 +41,8 @@ public class VaultTask implements ITask {
     private String logoutPlayerName;
     private String pendingFakeName = null;
     private final ServerPlayer operator;
+    private final int SPAWN_TIMEOUT_SECONDS=20;
+
 
     private enum Stage {
         SPAWNING,
@@ -230,6 +235,14 @@ public class VaultTask implements ITask {
                 currentFakePlayer = candidate;
                 pendingFakeName = null;
                 startRightClicking();
+                return;
+            }
+            ServerTickRateManager trm = server.tickRateManager();
+            double NANOSECONDS_PER_MILLISECOND = ((double)server.getAverageTickTimeNanos())/ TimeUtil.NANOSECONDS_PER_MILLISECOND;
+            double TPS = 1000.0D / Math.max(trm.isSprinting()?0.0:trm.millisecondsPerTick(), NANOSECONDS_PER_MILLISECOND);
+            if (stageTickCounter >= TPS*SPAWN_TIMEOUT_SECONDS) {
+                stop();
+                sendMessage("§c[PlayerOperate] §6Vault§c: 玩家 §f" + playerName + " §c无法在 §f" + SPAWN_TIMEOUT_SECONDS + " §ctick内生成假人，停止任务","[PlayerOperate] Vault: 玩家 " + playerName + " 无法在 " + SPAWN_TIMEOUT_SECONDS + " tick内生成假人，停止任务");
             }
         }
     }
@@ -284,8 +297,8 @@ public class VaultTask implements ITask {
             if (currentFakePlayer instanceof carpet.fakes.ServerPlayerInterface spi) {
                 spi.getActionPack().start(EntityPlayerActionPack.ActionType.USE, null);
             }
-            if (currentFakePlayer instanceof EntityPlayerMPFake fakePlayer) {
-                fakePlayer.kill(Component.literal("Vault cycle completed"));
+            if (currentFakePlayer instanceof EntityPlayerMPFake) {
+                currentFakePlayer.connection.onDisconnect(new DisconnectionDetails(Component.literal( "Vault cycle completed")));
             }
             currentFakePlayer = null;
         }
