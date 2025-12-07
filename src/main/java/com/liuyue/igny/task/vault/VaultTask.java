@@ -183,8 +183,8 @@ public class VaultTask implements ITask {
                 if (currentFakePlayer instanceof carpet.fakes.ServerPlayerInterface spi) {
                     spi.getActionPack().stopAll();
                 }
-                if (currentFakePlayer instanceof EntityPlayerMPFake fakePlayer) {
-                    fakePlayer.kill(Component.literal("Vault cleanup"));
+                if (currentFakePlayer instanceof EntityPlayerMPFake) {
+                    currentFakePlayer.connection.onDisconnect(new DisconnectionDetails(Component.literal( "Vault cleanup")));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
