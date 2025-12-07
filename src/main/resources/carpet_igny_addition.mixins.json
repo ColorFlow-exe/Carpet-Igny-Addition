@@ -10,6 +10,7 @@
     "carpet.accessors.EntityPlayerActionPackAccessor",
     "carpet.commands.EntityPlayerActionPackMixin",
     "carpet.commands.PlayerCommandMixin",
+    "carpet.features.fakePlayerNoMiningCoolDown.EntityPlayerActionPackMixin",
     "carpet.features.SetDefaultArgument.SettingsManagerMixin",
     "carpet.fix.FakePlayerBoatYawFix.EntityMixin",
     "commands.clearLightQueue.ThreadedLevelLightEngineAccessor",

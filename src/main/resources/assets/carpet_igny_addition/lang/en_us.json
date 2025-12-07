@@ -45,5 +45,6 @@
   "carpet.rule.locatorBarNoFakePlayer.desc": "The locator bar does not show fake players",
   "carpet.rule.fakePlayerLoginLogoutNoChatInfo.desc": "Fake players do not send login/logout messages to the chat",
   "carpet.rule.commandPlayerOperate.desc": "Use the /playerOperate command to manage player actions",
-  "carpet.rule.commandClearLightQueue.desc": "Clears the light queue of the world"
+  "carpet.rule.commandClearLightQueue.desc": "Clears the light queue of the world",
+  "carpet.rule.fakePlayerNoBreakingCoolDown.desc": "Fake players keep breaking without a cooldown for breaking"
 }

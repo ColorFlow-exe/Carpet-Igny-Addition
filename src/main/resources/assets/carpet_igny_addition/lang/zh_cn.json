@@ -73,5 +73,7 @@
   "carpet.rule.commandPlayerOperate.name": "玩家动作指令权限",
   "carpet.rule.commandPlayerOperate.desc": "使用/playerManager命令来控制玩家动作",
   "carpet.rule.commandClearLightQueue.name": "清除光照队列指令",
-  "carpet.rule.commandClearLightQueue.desc": "使用/clearlightqueue命令来清除光照队列"
+  "carpet.rule.commandClearLightQueue.desc": "使用/clearlightqueue命令来清除光照队列",
+  "carpet.rule.fakePlayerNoBreakingCoolDown.name": "假玩家无挖掘冷却",
+  "carpet.rule.fakePlayerNoBreakingCoolDown.desc": "假玩家长按破坏无挖掘冷却"
 }

@@ -143,7 +143,7 @@ cantrade：当载具上没有村民或者流浪商人时移除载具，其他实
 
 - 类型: `boolean`
 - 默认值: `true`
-- 参考选项: `true`, `cantrade`, `false`
+- 参考选项: `false`, `cantrade`, `true`
 - 分类: `IGNY`, `FEATURE`
 
 ### 蜡烛可放在不完整方块上 (candlePlaceOnIncompleteBlock)
@@ -257,3 +257,12 @@ cantrade：当载具上没有村民或者流浪商人时移除载具，其他实
 - 默认值: `ops`
 - 参考选项: `false`, `true`, `ops`, `0`, `1`, `2`, `3`, `4`
 - 分类: `IGNY`, `COMMAND`, `FEATURE`
+
+### 假玩家无挖掘冷却 (fakePlayerNoBreakingCoolDown)
+
+假玩家长按破坏无挖掘冷却。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 参考选项: `false`, `true`
+- 分类: `IGNY`, `FEATURE`

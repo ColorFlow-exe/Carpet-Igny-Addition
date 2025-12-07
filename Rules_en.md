@@ -150,7 +150,7 @@ cantrade: Remove the vehicle when there are no villagers or wandering merchants 
 
 - Type: `boolean`
 - Default Value: `true`
-- Suggested Options: `true`, `cantrade`, `false`
+- Suggested Options: `false`, `cantrade`, `true`
 - Categories: `IGNY`, `FEATURE`
 
 ### candlePlaceOnIncompleteBlock
@@ -264,3 +264,12 @@ Clears the light queue of the world.
 - Default Value: `ops`
 - Suggested Options: `false`, `true`, `ops`, `0`, `1`, `2`, `3`, `4`
 - Categories: `IGNY`, `COMMAND`, `FEATURE`
+
+### fakePlayerNoBreakingCoolDown
+
+Fake players keep breaking without a cooldown for breaking.
+
+- Type: `boolean`
+- Default Value: `false`
+- Suggested Options: `false`, `true`
+- Categories: `IGNY`, `FEATURE`
