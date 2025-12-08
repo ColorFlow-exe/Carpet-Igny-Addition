@@ -60,7 +60,6 @@ public class RuleChangeDataManager {
 
     private static void connect() {
         try {
-            Class.forName("org.sqlite.JDBC");
             File dbFile = server.getWorldPath(LevelResource.ROOT)
                     .resolve(IGNYServerMod.getModId())
                     .resolve("rule_changes.db")

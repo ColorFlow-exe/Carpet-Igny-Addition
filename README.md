@@ -6,12 +6,12 @@
 
 ## 依赖
 
-| 名称          | 类型 | 链接                                                                                                                                                                       |
-|-------------|----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Carpet      | 必须 | [MC百科](https://www.mcmod.cn/class/2361.html) &#124; [Modrinth](https://modrinth.com/mod/carpet) &#124; [CurseForge](https://www.curseforge.com/minecraft/mc-mods/carpet) |
-| MixinExtras | 内置 | [MC百科](https://www.mcmod.cn/class/12750.html)                                                                                                                            |
-| Fabric API  | 必须 | [MC百科](https://www.mcmod.cn/class/3124.html) &#124; [官方](https://fabricmc.net/)                                                                                          |
-| SQLite JDBC | 内置 | [GitHub](https://github.com/xerial/sqlite-jdbc) &#124; [Maven Repository](https://central.sonatype.com/artifact/org.xerial/sqlite-jdbc)                                |
+| 名称                    | 类型 | 链接                                                                                                                                                                                    | 备注                                                        |
+|-----------------------|----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| Carpet                | 必须 | [MC百科](https://www.mcmod.cn/class/2361.html) &#124; [Modrinth](https://modrinth.com/mod/carpet) &#124; [CurseForge](https://www.curseforge.com/minecraft/mc-mods/carpet)              |                                                           |
+| MixinExtras           | 内置 | [MC百科](https://www.mcmod.cn/class/12750.html)                                                                                                                                         |                                                           |
+| Fabric API            | 必须 | [MC百科](https://www.mcmod.cn/class/3124.html) &#124; [官方](https://fabricmc.net/)                                                                                                       |                                                           |
+| Minecraft SQLite JDBC | 可选 | [MC百科](https://www.mcmod.cn/class/22062.html) &#124; [Modrinth](https://modrinth.com/plugin/minecraft-sqlite-jdbc) &#124; [GitHub](https://github.com/Axionize/minecraft-sqlite-jdbc) | 把这个依赖作为mod安装在游戏后，可以使规则变更记录的保存方式为SQLite，不安装则通过json文件的方式储存。 |
 
 ## 版本支持
 

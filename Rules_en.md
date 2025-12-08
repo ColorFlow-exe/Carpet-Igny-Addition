@@ -273,3 +273,20 @@ Fake players keep breaking without a cooldown for breaking.
 - Default Value: `false`
 - Suggested Options: `false`, `true`
 - Categories: `IGNY`, `FEATURE`
+
+### creativeDestroyWaterloggedBlockNoWater `🐛Beta`
+
+Creative players can destroy waterlogged blocks without generating water.
+
+- Type: `boolean`
+- Default Value: `false`
+- Suggested Options: `false`, `true`
+- Categories: `IGNY`, `CREATIVE`, `FEATURE`
+
+### trialSpawnerCoolDown `🐛Beta`
+
+Customize the monster spawning cooldown after the trial spawner generates rewards.
+
+- Type: `int`
+- Default Value: `36000`
+- Categories: `IGNY`, `FEATURE`

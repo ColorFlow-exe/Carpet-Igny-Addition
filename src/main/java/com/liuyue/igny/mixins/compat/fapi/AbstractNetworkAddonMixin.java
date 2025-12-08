@@ -3,6 +3,7 @@ package com.liuyue.igny.mixins.compat.fapi;
 import carpet.CarpetServer;
 import carpet.api.settings.CarpetRule;
 import carpet.patches.FakeClientConnection;
+import com.liuyue.igny.IGNYServerMod;
 import com.liuyue.igny.IGNYSettings;
 import com.liuyue.igny.mixins.compat.accessor.fapi.AbstractChanneledNetworkAddonAccessor;
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
@@ -34,7 +35,7 @@ public abstract class AbstractNetworkAddonMixin {
 
     @Unique
     private static Boolean getCarpetOrgAdditionSetting() {
-            if(FabricLoader.getInstance().getAllMods().stream().map(ModContainer::getMetadata).map(ModMetadata::getId).anyMatch(id -> id.contains("carpet") && id.contains("org") && id.contains("addition"))){
+            if(IGNYServerMod.CARPET_ADDITION_MOD_IDS.contains("org")){
                 CarpetRule<?> carpetRule = CarpetServer.settingsManager.getCarpetRule("fakePlayerSpawnMemoryLeakFix");
                 if (carpetRule == null) {
                     return false;

@@ -17,6 +17,8 @@
     "compat.accessor.fapi.AbstractChanneledNetworkAddonAccessor",
     "compat.fapi.AbstractNetworkAddonMixin",
     "rule.candlePlaceOnIncompleteBlock.CandleBlockMixin",
+    "rule.creativeDestroyWaterloggedBlockNoWater.ServerPlayerGameModeMixin",
+    "rule.trialSpawnerCoolDown.TrialSpawnerMixin",
     "rule.fakePlayerCanPush.EntityMixin",
     "rule.fakePlayerLoginLogoutNoChatInfo.PlayerListMixin",
     "rule.fakePlayerLoginLogoutNoChatInfo.ServerGamePacketListenerImplMixin",

@@ -75,5 +75,9 @@
   "carpet.rule.commandClearLightQueue.name": "清除光照队列指令",
   "carpet.rule.commandClearLightQueue.desc": "使用/clearlightqueue命令来清除光照队列",
   "carpet.rule.fakePlayerNoBreakingCoolDown.name": "假玩家无挖掘冷却",
-  "carpet.rule.fakePlayerNoBreakingCoolDown.desc": "假玩家长按破坏无挖掘冷却"
+  "carpet.rule.fakePlayerNoBreakingCoolDown.desc": "假玩家长按破坏无挖掘冷却",
+  "carpet.rule.creativeDestroyWaterloggedBlockNoWater.name": "创造破坏含水方块无水",
+  "carpet.rule.creativeDestroyWaterloggedBlockNoWater.desc": "创造玩家破坏含水方块时不会产生水",
+  "carpet.rule.trialSpawnerCoolDown.name": "试炼刷怪笼刷怪冷却",
+  "carpet.rule.trialSpawnerCoolDown.desc": "自定义试炼刷怪笼生成奖励之后的刷怪冷却"
 }

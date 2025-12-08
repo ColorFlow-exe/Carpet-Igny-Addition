@@ -195,4 +195,15 @@ public class IGNYSettings
             options = {"false", "true"}
     )
     public static Boolean fakePlayerNoBreakingCoolDown = false;
+
+    @Rule(
+            categories = {IGNY, CREATIVE, FEATURE},
+            options = {"false", "true"}
+    )
+    public static Boolean creativeDestroyWaterloggedBlockNoWater = false;
+
+    @Rule(
+            categories = {IGNY, FEATURE}
+    )
+    public static Integer trialSpawnerCoolDown = 36000;
 }

@@ -266,3 +266,20 @@ cantrade：当载具上没有村民或者流浪商人时移除载具，其他实
 - 默认值: `false`
 - 参考选项: `false`, `true`
 - 分类: `IGNY`, `FEATURE`
+
+### 创造破坏含水方块无水 (creativeDestroyWaterloggedBlockNoWater) `🐛Beta`
+
+创造玩家破坏含水方块时不会产生水。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 参考选项: `false`, `true`
+- 分类: `IGNY`, `CREATIVE`, `FEATURE`
+
+### 试炼刷怪笼刷怪冷却 (trialSpawnerCoolDown) `🐛Beta`
+
+自定义试炼刷怪笼生成奖励之后的刷怪冷却。
+
+- 类型: `int`
+- 默认值: `36000`
+- 分类: `IGNY`, `FEATURE`

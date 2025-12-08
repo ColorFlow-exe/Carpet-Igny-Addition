@@ -6,12 +6,12 @@
 
 ## Dependencies
 
-| Name | Type | Links                                                                                                                                                                       |
-|------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name | Type | Links                                                                                                                                                                       | Notes                                                         |
+|------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
 | Carpet | Required | [MC百科](https://www.mcmod.cn/class/2361.html) &#124; [Modrinth](https://modrinth.com/mod/carpet) &#124; [CurseForge](https://www.curseforge.com/minecraft/mc-mods/carpet) |
 | MixinExtras | Built-in | [MC百科](https://www.mcmod.cn/class/12750.html)                                                                                                                           |
 | Fabric API | Required | [MC百科](https://www.mcmod.cn/class/3124.html) &#124; [Official](https://fabricmc.net/)                                                                                         |
-| SQLite JDBC | Built-in |  [GitHub](https://github.com/xerial/sqlite-jdbc) &#124; [Maven Repository](https://central.sonatype.com/artifact/org.xerial/sqlite-jdbc)                                |
+| Minecraft SQLite JDBC | Optional | [MC百科](https://www.mcmod.cn/class/22062.html) &#124; [Modrinth](https://modrinth.com/plugin/minecraft-sqlite-jdbc) &#124; [GitHub](https://github.com/Axionize/minecraft-sqlite-jdbc) | When installed as a mod, rule change records will be stored in an SQLite database. If not installed, records are saved as JSON files.      |
 
 ## Version Support
 
