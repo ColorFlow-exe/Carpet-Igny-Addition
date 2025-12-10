@@ -79,5 +79,15 @@
   "carpet.rule.creativeDestroyWaterloggedBlockNoWater.name": "创造破坏含水方块无水",
   "carpet.rule.creativeDestroyWaterloggedBlockNoWater.desc": "创造玩家破坏含水方块时不会产生水",
   "carpet.rule.trialSpawnerCoolDown.name": "试炼刷怪笼刷怪冷却",
-  "carpet.rule.trialSpawnerCoolDown.desc": "自定义试炼刷怪笼生成奖励之后的刷怪冷却"
+  "carpet.rule.trialSpawnerCoolDown.desc": "自定义试炼刷怪笼生成奖励之后的刷怪冷却",
+  "carpet.rule.optimizedPiglin.name": "优化猪灵",
+  "carpet.rule.optimizedPiglin.desc":"优化堆叠的猪灵实体",
+  "carpet.rule.optimizedPiglin.extra.0": "它关闭了大部分移动和挤压的计算，使其性能更好",
+  "carpet.rule.optimizedPiglinLimit.name": "优化猪灵限制",
+  "carpet.rule.optimizedPiglinLimit.desc":"当堆叠的猪灵个数达到规则设置的值时启用优化，需开启optimizedPiglin规则",
+  "carpet.rule.optimizedWarden.name": "优化监守者",
+  "carpet.rule.optimizedWarden.desc": "优化堆叠的监守者实体",
+  "carpet.rule.optimizedWarden.extra.0": "它关闭了大部分移动和挤压的计算，使其性能更好",
+  "carpet.rule.optimizedWardenLimit.name": "优化监守者限制",
+  "carpet.rule.optimizedWardenLimit.desc": "当堆叠的监守者个数达到规则设置的值时启用优化，需开启optimizedWarden规则"
 }

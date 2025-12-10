@@ -290,3 +290,39 @@ Customize the monster spawning cooldown after the trial spawner generates reward
 - Type: `int`
 - Default Value: `36000`
 - Categories: `IGNY`, `FEATURE`
+
+### optimizedPiglin `🐛Beta`
+
+Optimize the cramming of piglin entities.
+
+From [ROF-Carpet-Addition](https://github.com/Melationin/ROF-Carpet-Addition)
+
+- Type: `boolean`
+- Default Value: `false`
+- Suggested Options: `false`, `true`
+- Categories: `IGNY`, `OPTIMIZATION`, `FEATURE`
+
+### optimizedPiglinLimit `🐛Beta`
+
+Enable optimization when the number of cramming piglins reaches the rule value. Requires `optimizedPiglin` to be enabled.
+
+- Type: `int`
+- Default Value: `100`
+- Categories: `IGNY`, `OPTIMIZATION`, `FEATURE`
+
+### optimizedWarden `🐛Beta`
+
+Optimize the cramming of warden entities.
+
+- Type: `boolean`
+- Default Value: `false`
+- Suggested Options: `false`, `true`
+- Categories: `IGNY`, `OPTIMIZATION`, `FEATURE`
+
+### optimizedWardenLimit `🐛Beta`
+
+Enable optimization when the number of cramming wardens reaches the rule value. Requires `optimizedWarden` to be enabled.
+
+- Type: `int`
+- Default Value: `100`
+- Categories: `IGNY`, `OPTIMIZATION`, `FEATURE`

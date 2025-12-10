@@ -283,3 +283,39 @@ cantrade：当载具上没有村民或者流浪商人时移除载具，其他实
 - 类型: `int`
 - 默认值: `36000`
 - 分类: `IGNY`, `FEATURE`
+
+### 优化猪灵 (optimizedPiglin) `🐛Beta`
+
+优化堆叠的猪灵实体，它关闭了大部分移动和挤压的计算，使其性能更好。
+
+移植自[ROF-Carpet-Addition](https://github.com/Melationin/ROF-Carpet-Addition)
+
+- 类型: `boolean`
+- 默认值: `false`
+- 参考选项: `false`, `true`
+- 分类: `IGNY`, `OPTIMIZATION`, `FEATURE`
+
+### 优化猪灵限制 (optimizedPiglinLimit) `🐛Beta`
+
+当堆叠的猪灵个数达到规则设置的值时启用优化，需开启optimizedPiglin规则。
+
+- 类型: `int`
+- 默认值: `100`
+- 分类: `IGNY`, `OPTIMIZATION`, `FEATURE`
+
+### 优化监守者 (optimizedWarden) `🐛Beta`
+
+优化堆叠的监守者实体，它关闭了大部分移动和挤压的计算，使其性能更好。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 参考选项: `false`, `true`
+- 分类: `IGNY`, `OPTIMIZATION`, `FEATURE`
+
+### 优化监守者限制 (optimizedWardenLimit) `🐛Beta`
+
+当堆叠的监守者个数达到规则设置的值时启用优化，需开启optimizedWarden规则。
+
+- 类型: `int`
+- 默认值: `100`
+- 分类: `IGNY`, `OPTIMIZATION`, `FEATURE`

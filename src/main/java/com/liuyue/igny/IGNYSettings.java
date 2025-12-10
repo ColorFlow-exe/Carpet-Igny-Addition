@@ -206,4 +206,26 @@ public class IGNYSettings
             categories = {IGNY, FEATURE}
     )
     public static Integer trialSpawnerCoolDown = 36000;
+
+    @Rule(
+            categories = {IGNY, OPTIMIZATION, FEATURE},
+            options = {"false", "true"}
+    )
+    public static Boolean optimizedPiglin = false;
+
+    @Rule(
+            categories = {IGNY,OPTIMIZATION,FEATURE}
+    )
+    public static Integer optimizedPiglinLimit = 100;
+
+    @Rule(
+            categories = {IGNY, OPTIMIZATION, FEATURE},
+            options = {"false", "true"}
+    )
+    public static Boolean optimizedWarden = false;
+
+    @Rule(
+            categories = {IGNY,OPTIMIZATION,FEATURE}
+    )
+    public static Integer optimizedWardenLimit = 100;
 }

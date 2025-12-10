@@ -20,6 +20,7 @@
         - `...pause`
         - `...resume`
     - `...list`
+    - `...stopAll`
     - `...pauseAll`
     - `...resumeAll`
 
@@ -34,6 +35,7 @@
         - `...pause`: Pauses the player's current task.
         - `...resume`: Resumes the player's paused task.
     - `...list`: Lists all active tasks.
+    - `...stopAll`: Stops all tasks.
     - `...pauseAll`: Pauses all running tasks.
     - `...resumeAll`: Resumes all paused tasks.
 

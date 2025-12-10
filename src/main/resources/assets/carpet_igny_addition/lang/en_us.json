@@ -48,5 +48,11 @@
   "carpet.rule.commandClearLightQueue.desc": "Clears the light queue of the world",
   "carpet.rule.fakePlayerNoBreakingCoolDown.desc": "Fake players keep breaking without a cooldown for breaking",
   "carpet.rule.creativeDestroyWaterloggedBlockNoWater.desc": "Creative players can destroy waterlogged blocks without generating water",
-  "carpet.rule.trialSpawnerCoolDown.desc": "Customize the monster spawning cooldown after the trial spawner generates rewards"
+  "carpet.rule.trialSpawnerCoolDown.desc": "Customize the monster spawning cooldown after the trial spawner generates rewards",
+  "carpet.rule.optimizedPiglin.desc":"Optimize the cramming of piglins entities",
+  "carpet.rule.optimizedPiglin.extra.0": "It has shut down most travel and cramming computing,so that it can have better performance",
+  "carpet.rule.optimizedPiglinLimit.desc":"Enable optimization when the number of cramming piglins reaches the rule value",
+  "carpet.rule.optimizedWarden.desc": "Optimize the cramming of wardens entities",
+  "carpet.rule.optimizedWarden.extra.0": "It has shut down most travel and cramming computing,so that it can have better performance",
+  "carpet.rule.optimizedWardenLimit.desc": "Enable optimization when the number of cramming warden reaches the rule value"
 }
