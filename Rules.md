@@ -363,7 +363,7 @@ cantrade：当载具上没有村民或者流浪商人时移除载具，其他实
 - 默认值: `0`
 - 分类: `IGNY`, `SURVIVAL`, `FEATURE`
 
-### 生成下界传送门 (generateNetherPortal)
+### 生成下界传送门 (generateNetherPortal) `🐛Beta`
 
 使用打火石和火焰弹可以直接在黑曜石上放置1x1大小的下界传送门。
 creative：创造模式下，在survival选项的基础上可以在末地维度生成下界传送门。
