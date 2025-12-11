@@ -51,19 +51,12 @@ public abstract class FireChargeItemMixin {
                         if (level.getBlockState(targetPos).is(Blocks.FIRE) || level.getBlockState(targetPos).is(Blocks.AIR)) {
                             level.setBlock(targetPos, portalState, 2);
                             this.playSound(level, targetPos);
-                            context.getItemInHand().hurtAndBreak(1, player,
-                                    //#if MC >= 12111
-                                    //$$ context.getHand().asEquipmentSlot()
-                                    //#else
-                                    LivingEntity.getSlotForHand(context.getHand())
-                                    //#endif
-                            );
                             cancel = true;
                         }
                     }
                 }
                 if (cancel) {
-                    //#if MC >= 12111
+                    //#if MC >= 12102
                     //$$ cir.setReturnValue(InteractionResult.SUCCESS);
                     //#else
                     cir.setReturnValue(InteractionResult.sidedSuccess(level.isClientSide()));

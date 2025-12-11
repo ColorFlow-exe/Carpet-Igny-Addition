@@ -59,7 +59,7 @@ public class FlintAndSteelItemMixin {
                     }
                 }
                 if (cancel) {
-                    //#if MC >= 12111
+                    //#if MC >= 12102
                     //$$ cir.setReturnValue(InteractionResult.SUCCESS);
                     //#else
                     cir.setReturnValue(InteractionResult.sidedSuccess(level.isClientSide()));
