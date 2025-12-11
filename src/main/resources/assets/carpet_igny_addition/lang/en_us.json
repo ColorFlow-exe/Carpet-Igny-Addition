@@ -7,7 +7,6 @@
   "igny.command.enderchest.no_permission": "You don't have permission to drop ender chest items",
   "igny.command.enderchest.real_player_op_only": "Only operators can drop ender chest items of real players",
   "igny.command.fixnotepitch.success": "Successfully changed %s note blocks to pitch %s",
-
   "igny.command.playerOperate.no_tasks": "§cNo tasks available",
   "igny.command.playerOperate.no_running_tasks": "§cNo running tasks",
   "igny.command.playerOperate.task_stopped": "§7[PlayerOperate] §cStopped §f%d §ctask(s)",

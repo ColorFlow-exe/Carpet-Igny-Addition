@@ -7,7 +7,6 @@
   "igny.command.enderchest.no_permission": "你没有权限丢弃末影箱物品",
   "igny.command.enderchest.real_player_op_only": "只有OP可以丢弃真实玩家的末影箱物品",
   "igny.command.fixnotepitch.success": "成功将 %s 个音符盒的音高修改为 %s",
-
   "igny.command.playerOperate.no_tasks": "§c没有可用任务",
   "igny.command.playerOperate.no_running_tasks": "§c没有正在运行的任务",
   "igny.command.playerOperate.task_stopped": "§7[PlayerOperate] §c已停止 §f%d §c个任务",
