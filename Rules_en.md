@@ -387,3 +387,11 @@ If the player is in creative mode, this rule can also be used in the End dimensi
 - Default Value: `false`
 - Suggested Options: `false`, `true`
 - Categories: `IGNY`, `FEATURE`
+
+### placeComposterCompost `🐛Beta`
+
+hen placing the composter, the compost level should be set to a value within the specified range, with a minimum of 0 and a maximum of 8.
+
+- Type: `int`
+- Default value: `0`
+- Categories: `IGNY`, `CREATIVE`, `FEATURE`

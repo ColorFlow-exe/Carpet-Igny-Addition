@@ -48,6 +48,7 @@
     "rule.optimizations.PiglinAiMixin",
     "rule.optimizations.PiglinMixin",
     "rule.optimizations.WardenMixin",
+    "rule.placeComposterCompost.BlockItemMixin",
     "rule.playerLevitationFreeShulkerBullet.ShulkerBulletMixin",
     "rule.playerMiningFatigueFreeGuardian.GuardianAttackGoalMixin",
     "rule.playerOperationLimiter.BlockItemMixin",

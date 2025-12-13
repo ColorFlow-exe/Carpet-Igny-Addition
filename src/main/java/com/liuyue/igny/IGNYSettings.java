@@ -270,4 +270,9 @@ public class IGNYSettings
             options = {"false", "true"}
     )
     public static Boolean generateNetherPortal = false;
+
+    @Rule(
+            categories = {IGNY, CREATIVE, FEATURE}
+    )
+    public static Integer placeComposterCompost = 0;
 }

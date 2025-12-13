@@ -380,3 +380,11 @@ cantrade：当载具上没有村民或者流浪商人时移除载具，其他实
 - 默认值: `false`
 - 参考选项: `false`, `true`
 - 分类: `IGNY`, `FEATURE`
+
+### 放置堆肥桶堆肥 (placeComposterCompost) `🐛Beta`
+
+放置堆肥桶时堆肥到规则设置的值，范围为0-8。
+
+- 类型: `int`
+- 默认值: `0`
+- 分类: `IGNY`, `CREATIVE`, `FEATURE`
